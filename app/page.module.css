@@ -1,0 +1,62 @@
+
+.main__container{
+    max-width: 1800px;
+    margin: auto;
+    background: #222222;
+}
+
+
+/*Left Section Header*/
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1rem 0 3rem 0;
+}
+.header__navbar{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.header__navbar h1{
+    margin-right: 2rem;
+}
+.header__navbar a{
+    transition: all 0.3s ease-in-out;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.header__navbar a:hover{
+     scale: 1.1;
+ }
+
+/*Right Section Header*/
+.header__searchbar{
+    display: flex;
+    gap: 1rem;
+
+}
+.header__searchbar input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.header__searchbar button{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 10px;
+    border: 1px solid #28a745;
+    background: transparent;
+    color: #28a745;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.header__searchbar button:active{
+    scale: 1.05;
+}
+
