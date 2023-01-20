@@ -1,91 +1,61 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+// access_token: 'yrdniavh81hqy3s53eyb0h5riuiwis',
+//     expires_in: 5104167,
+//     token_type: 'bearer'
 
-const inter = Inter({ subsets: ['latin'] })
+import axios from "axios";
+import Link from "next/link"
+import Image from "next/image";
+import bioshock from "../temporaryPhotos/bioshock.jpg"
+import { Roboto } from '@next/font/google'
+import "./page.module.css"
 
-export default function Home() {
+
+const getGameList =async()=>{
+   const res = await axios({
+    // url: "https://api.rawg.io/api/games?key=9db64c0d57994b08accbc132770287b2",
+    method: 'GET',
+    headers: {
+    },
+  })
+      .then(response => {
+        return response.data
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  return await res
+}
+
+const roboto = Roboto({
+    subsets:['latin'],
+    style:"normal",
+    weight:'400'
+})
+
+export default async function Home() {
+  const gameList=await getGameList()
+  console.log(gameList)
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className={roboto.className} style={{background:"#222222"}}>
+      <button>Api</button>
+      {/*{gameList?.results?.map((item:any,index:number)=>{*/}
+      {/*  return <div key={index} style={{borderRadius:"20px",overflow:"hidden"}}>*/}
+      {/*      <Image src={item.background_image} alt={`${item.name} thumb`} width={550} height={300}/>*/}
+      {/*      {item.name}*/}
+      {/*  </div>*/}
+      {/*})}*/}
+        <div >
+        {Array(100).fill("").map((item:any,index:number)=>{
+            return(
+            <div key={index} style={{position:"relative",borderRadius:"20px",overflow:"hidden",width:"550px",height:"300px"}} >
+                <Image src={bioshock} alt={"zdj"} width={550} height={300}/>
+                <div style={{padding:"20px 50px",color:"white",position:"absolute",bottom:"0",left:"0",right:"0",background:"rgba(0,0,0,0.6)",letterSpacing:"3px"}}>
+                    <h1 >Read Dead Redemption 2</h1>
+                </div>
+            </div>)
+        })}
         </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   )
 }
