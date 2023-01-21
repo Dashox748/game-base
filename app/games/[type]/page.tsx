@@ -1,6 +1,7 @@
 // access_token: 'yrdniavh81hqy3s53eyb0h5riuiwis',
 //     expires_in: 5104167,
 //     token_type: 'bearer'
+import bioshock from "@/temporaryPhotos/bioshock.jpg";
 
 import axios from "axios";
 import Image from "next/image";
@@ -12,7 +13,7 @@ const getGameList = async (type: string, searchParams: any) => {
     url: `https://api.rawg.io/api/games?key=${
       process.env.API_KEY
     }&page_size=40${
-      type === "section1" ? `&ordering=-${searchParams.filter}` : ""
+      type === "section1" ? `&ordering=-${searchParams?.filter}` : ""
     }${type === "section2" ? `&genres=${searchParams.filter}` : ""}${
       type === "section3" ? `&platforms=${searchParams.filter}` : ""
     }
@@ -32,18 +33,14 @@ const getGameList = async (type: string, searchParams: any) => {
 };
 
 type pageProps = {
-  params: {
-    type: string;
-  };
+  params: { type: string };
   searchParams: any;
 };
 export default async function GameListWithType({
   params: { type },
   searchParams,
-}: pageProps) {
+}: any) {
   const gameList = await getGameList(type, searchParams);
-  // console.log(gameList);
-  // console.log(searchParams);
   return (
     <div>
       <div className={classes.gameList_grid}>
@@ -55,8 +52,8 @@ export default async function GameListWithType({
                   item.background_image ? item.background_image : notFoundPhoto
                 }
                 alt={`${item.name} thumb`}
-                blurDataURL="data:..."
                 placeholder="blur"
+                blurDataURL={"/blur.jpg"}
                 fill
                 sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 33vw"
               />
@@ -66,25 +63,6 @@ export default async function GameListWithType({
             </div>
           );
         })}
-        {/*{Array(50)*/}
-        {/*  .fill("")*/}
-        {/*  .map((item: any, index: number) => {*/}
-        {/*    return (*/}
-        {/*      <div key={index} className={classes.game_grid}>*/}
-        {/*        <Image*/}
-        {/*          src={bioshock}*/}
-        {/*          alt={`thumb`}*/}
-        {/*          blurDataURL="data:..."*/}
-        {/*          placeholder="blur"*/}
-        {/*          fill*/}
-        {/*          sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 33vw"*/}
-        {/*        />*/}
-        {/*        <div className={classes.gameTitle_grid}>*/}
-        {/*          <h2>The Witcher 3</h2>*/}
-        {/*        </div>*/}
-        {/*      </div>*/}
-        {/*    );*/}
-        {/*  })}*/}
       </div>
     </div>
   );

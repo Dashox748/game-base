@@ -1,4 +1,5 @@
 import "./globals.css";
+import { AnalyticsWrapper } from "@/components/analytics";
 import Header from "@/app/Header";
 import { Roboto } from "@next/font/google";
 import classes from "./page.module.css";
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${roboto.className} ${classes.main__container}`}>
         <Header />
         {children}
+        <AnalyticsWrapper />
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <main>
       {/* @ts-ignore */}
-      <MostPopular />
+      <h1>Bedzie jakiś ładny homepage</h1>
     </main>
   );
 }

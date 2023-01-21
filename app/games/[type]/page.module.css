@@ -34,6 +34,24 @@
     padding: 0 50px ;
 }
 
+.loading_div{
+    display: flex;
+    justify-content: center;
+}
+.loader {
+    margin-top: 100px;
+    border: 10px solid transparent; /* Light grey */
+    border-top: 10px solid gray; /* Blue */
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 @media screen and (max-width: 847px){
     .game_grid{
         height: 500px;
