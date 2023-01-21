@@ -13,16 +13,20 @@ function Header() {
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
                 <li>
-                  <Link href="/games/popular"> Popular</Link>
+                  <Link href="/games/section1?filter=popular"> Popular</Link>
                 </li>
                 <li>
-                  <Link href="/games/metacritic">Best Rated</Link>
+                  <Link href="/games/section1?filter=metacritic">
+                    Best Rated
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/games/released">Most Recent</Link>
+                  <Link href="/games/section1?filter=released">
+                    Most Recent
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/games">Upcoming</Link>
+                  <Link href="/games/section1?filter=popular">Upcoming</Link>
                 </li>
               </ul>
             </div>
@@ -32,10 +36,20 @@ function Header() {
             <div className={classes.dropdown__overlay}>
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
-                <li>Action</li>
-                <li>Strategy</li>
-                <li>RPG</li>
-                <li>Shooter</li>
+                <li>
+                  <Link href="/games/section2?filter=action">Action</Link>
+                </li>
+                <li>
+                  <Link href="/games/section2?filter=strategy">Strategy</Link>
+                </li>
+                <li>
+                  <Link href="/games/section2?filter=role-playing-games-rpg">
+                    RPG
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/games/section2?filter=shooter">Shooter</Link>
+                </li>
               </ul>
             </div>
             <h3 className={classes.dropdown__button}>Section 2</h3>
@@ -44,9 +58,15 @@ function Header() {
             <div className={classes.dropdown__overlay}>
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
-                <li>PC</li>
-                <li>Playstation</li>
-                <li>Xbox</li>
+                <li>
+                  <Link href="/games/section3?filter=4">PC</Link>
+                </li>
+                <li>
+                  <Link href="/games/section3?filter=187">Playstation 5</Link>
+                </li>
+                <li>
+                  <Link href="/games/section3?filter=186">Xbox Series X</Link>
+                </li>
               </ul>
             </div>
             <h3 className={classes.dropdown__button}>Section 3</h3>
