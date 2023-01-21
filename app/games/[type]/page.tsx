@@ -1,21 +1,18 @@
-// access_token: 'yrdniavh81hqy3s53eyb0h5riuiwis',
-//     expires_in: 5104167,
-//     token_type: 'bearer'
-import bioshock from "@/temporaryPhotos/bioshock.jpg";
-
 import axios from "axios";
 import Image from "next/image";
 import notFoundPhoto from "@/temporaryPhotos/notFoundPhoto.png";
 import classes from "./page.module.css";
 
 const getGameList = async (type: string, searchParams: string) => {
+  console.log(searchParams);
   const res = await axios({
-    url: `https://api.rawg.io/api/games?key=${
-      process.env.API_KEY
-    }&page_size=40${type === "section1" ? `&ordering=-${searchParams}` : ""}${
-      type === "section2" ? `&genres=${searchParams}` : ""
-    }${type === "section3" ? `&platforms=${searchParams}` : ""}
-    `.trim(),
+    url: `https://api.rawg.io/api/games?key=${process.env.API_KEY}&ordering=-${searchParams}`,
+    // url: `https://api.rawg.io/api/games?key=${
+    //   process.env.API_KEY
+    // }&page_size=40${type === "section1" ? `&ordering=-${searchParams}` : ""}${
+    //   type === "section2" ? `&genres=${searchParams}` : ""
+    // }${type === "section3" ? `&platforms=${searchParams}` : ""}
+    // `.trim(),
     // url: `https://api.rawg.io/api/platforms?key=${process.env.API_KEY}`,
     method: "GET",
     headers: {},
@@ -34,10 +31,11 @@ type pageProps = {
   params: { type: string };
   searchParams: { filter: string };
 };
+
 export default async function GameListWithType({
   params: { type },
   searchParams: { filter },
-}: any) {
+}: pageProps) {
   const gameList = await getGameList(type, filter);
   return (
     <div>
