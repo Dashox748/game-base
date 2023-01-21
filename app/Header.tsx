@@ -12,22 +12,18 @@ function Header() {
             <div className={classes.dropdown__overlay}>
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
-                <li>
-                  <Link href="/games/section1?filter=popular"> Popular</Link>
-                </li>
-                <li>
-                  <Link href="/games/section1?filter=metacritic">
-                    Best Rated
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/games/section1?filter=released">
-                    Most Recent
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/games/section1?filter=popular">Upcoming</Link>
-                </li>
+                <Link href="/games/section1?filter=popular">
+                  <li>Popular</li>
+                </Link>
+                <Link href="/games/section1?filter=metacritic">
+                  <li>Best Rated</li>
+                </Link>
+                <Link href="/games/section1?filter=released">
+                  <li>Most Recent</li>
+                </Link>
+                <Link href="/games/section1?filter=popular">
+                  <li>Upcoming</li>
+                </Link>
               </ul>
             </div>
             <h3 className={classes.dropdown__button}>Section 1</h3>
@@ -36,20 +32,18 @@ function Header() {
             <div className={classes.dropdown__overlay}>
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
-                <li>
-                  <Link href="/games/section2?filter=action">Action</Link>
-                </li>
-                <li>
-                  <Link href="/games/section2?filter=strategy">Strategy</Link>
-                </li>
-                <li>
-                  <Link href="/games/section2?filter=role-playing-games-rpg">
-                    RPG
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/games/section2?filter=shooter">Shooter</Link>
-                </li>
+                <Link href="/games/section2?filter=action">
+                  <li>Action</li>
+                </Link>
+                <Link href="/games/section2?filter=strategy">
+                  <li>Strategy</li>
+                </Link>
+                <Link href="/games/section2?filter=role-playing-games-rpg">
+                  <li>RPG</li>
+                </Link>
+                <Link href="/games/section2?filter=shooter">
+                  <li>Shooter</li>
+                </Link>
               </ul>
             </div>
             <h3 className={classes.dropdown__button}>Section 2</h3>
@@ -58,15 +52,15 @@ function Header() {
             <div className={classes.dropdown__overlay}>
               <div style={{ opacity: "0" }}>x</div>
               <ul className={classes.category__list}>
-                <li>
-                  <Link href="/games/section3?filter=4">PC</Link>
-                </li>
-                <li>
-                  <Link href="/games/section3?filter=187">Playstation 5</Link>
-                </li>
-                <li>
-                  <Link href="/games/section3?filter=186">Xbox Series X</Link>
-                </li>
+                <Link href="/games/section3?filter=4">
+                  <li>PC</li>
+                </Link>
+                <Link href="/games/section3?filter=187">
+                  <li>Playstation 5</li>
+                </Link>
+                <Link href="/games/section3?filter=186">
+                  <li>Xbox Series X</li>
+                </Link>
               </ul>
             </div>
             <h3 className={classes.dropdown__button}>Section 3</h3>
