@@ -2,7 +2,7 @@
 //     expires_in: 5104167,
 //     token_type: 'bearer'
 
-import MostPopular from "@/app/mostpopular/page";
+import MostPopular from "@/app/games/page";
 
 export default async function Home() {
   return (

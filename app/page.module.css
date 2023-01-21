@@ -1,44 +1,106 @@
 
-.main__container{
+.main__container {
     max-width: 1800px;
     margin: auto;
     background: #222222;
+    padding: 0 clamp(10px, 3.5vw, 150px);
+}
+.header__menu {
+    position: relative;
+}
+.header__title{
+        color: white;
+        text-decoration: none;
+        font-size: 35px;
+}
+.dropdown__button {
+    cursor: pointer;
+    color: gray;
+    transition: all 0.3s ease-in-out;
+}
+.dropdown__button:hover{
+    color: white;
+}
+.dropdown__overlay:hover ~ .dropdown__button{
+    color: white;
+}
+.dropdown__overlay {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    top: 20px;
+    left: -30px;
+    right: -30px;
+    z-index: 40;
+
+}
+.dropdown__overlay:hover {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.header__menu:hover .dropdown__overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.category__list {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    border-radius: 10px;
+    z-index: 30;
+    overflow: hidden;
+
+
+}
+
+.category__list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+    background: #222222;
+}
+
+.category__list li:hover {
+    background: gray;
 }
 
 
 /*Left Section Header*/
-.header__container{
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 1rem 0 3rem 0;
+    padding: 1rem 0 5rem 0;
 }
-.header__navbar{
+
+.header__navbar {
     display: flex;
     gap: 2rem;
     align-items: center;
 }
-.header__navbar h1{
+
+.header__navbar h1 {
     margin-right: 2rem;
 }
-.header__navbar a{
-    transition: all 0.3s ease-in-out;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-}
-.header__navbar a:hover{
-     scale: 1.1;
- }
 
 /*Right Section Header*/
-.header__searchbar{
+.header__searchbar {
     display: flex;
     gap: 1rem;
 
 }
-.header__searchbar input{
+
+.header__searchbar input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -46,7 +108,7 @@
     outline: none;
 }
 
-.header__searchbar button{
+.header__searchbar button {
     font-size: 15px;
     font-weight: 500;
     padding: 0 10px;
@@ -56,7 +118,8 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.header__searchbar button:active{
+
+.header__searchbar button:active {
     scale: 1.05;
 }
 
