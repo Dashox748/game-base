@@ -1,0 +1,25 @@
+.post_heading {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(34,63,90, 0.75);
+    font-size: 25px;
+    font-weight: 500;
+    padding: 24px;
+    min-height: 66px;
+    margin: 0;
+}
+/*.post_heading:hover{*/
+/*    transform:scale(1.04)*/
+/*}*/
+
+.post_image{
+    object-fit: cover;
+    transition: .5s ease-out;
+}
+.post_image:hover{
+    transform:scale(1.04)
+}

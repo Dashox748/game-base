@@ -1,5 +1,7 @@
 import classes from "./page.module.css";
 import Link from "next/link";
+import Image from "next/image";
+import arrowDown from "@/temporaryPhotos/menuicon.ico";
 function Header() {
   return (
     <div className={classes.header__container}>
@@ -21,12 +23,20 @@ function Header() {
                 <Link href="/games/section1/released">
                   <li>Most Recent</li>
                 </Link>
-                <Link href="/games/section1/upcoming">
+                <Link href="/games/section/2023-01-22,2023-02-22">
                   <li>Upcoming</li>
                 </Link>
               </ul>
             </div>
-            <h3 className={classes.dropdown__button}>Section 1</h3>
+            <div className={classes.dropdown__button}>
+              <h3>Browse </h3>
+              <Image
+                src={arrowDown}
+                alt={"hoverable menu"}
+                width={15}
+                height={17}
+              />
+            </div>
           </div>
           <div className={classes.header__menu}>
             <div className={classes.dropdown__overlay}>
@@ -46,7 +56,15 @@ function Header() {
                 </Link>
               </ul>
             </div>
-            <h3 className={classes.dropdown__button}>Section 2</h3>
+            <div className={classes.dropdown__button}>
+              <h3>Genres </h3>
+              <Image
+                src={arrowDown}
+                alt={"hoverable menu"}
+                width={15}
+                height={17}
+              />
+            </div>
           </div>
           <div className={classes.header__menu}>
             <div className={classes.dropdown__overlay}>
@@ -63,8 +81,19 @@ function Header() {
                 </Link>
               </ul>
             </div>
-            <h3 className={classes.dropdown__button}>Section 3</h3>
+            <div className={classes.dropdown__button}>
+              <h3>Platforms </h3>
+              <Image
+                src={arrowDown}
+                alt={"hoverable menu"}
+                width={15}
+                height={17}
+              />
+            </div>
           </div>
+          <Link href="/news/">
+            <h3 className={classes.dropdown__button}>News</h3>
+          </Link>
         </div>
       </div>
       <div className={classes.header__searchbar}>

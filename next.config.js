@@ -3,10 +3,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  images : {
-    domains : ['media.rawg.io', 'localhost', 'picsum.photos'] // <== Domain name
-  }
-
-}
-module.exports = nextConfig
-
+  images: {
+    domains: ["media.rawg.io", "localhost", "sm.ign.com", "ign.com"], // <== Domain name
+  },
+};
+module.exports = nextConfig;

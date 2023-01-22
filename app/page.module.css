@@ -7,6 +7,7 @@
 }
 .header__menu {
     position: relative;
+
 }
 .header__title{
         color: white;
@@ -17,6 +18,9 @@
     cursor: pointer;
     color: gray;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 .dropdown__button:hover{
     color: white;
@@ -30,8 +34,8 @@
     opacity: 0;
     pointer-events: none;
     top: 20px;
-    left: -33px;
-    right: -33px;
+    left: -35px;
+    right: -35px;
     z-index: 40;
 
 }

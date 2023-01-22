@@ -1,0 +1,6 @@
+.grid_news{
+    margin: 0 auto;
+    display: grid;
+    max-width: 1400px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

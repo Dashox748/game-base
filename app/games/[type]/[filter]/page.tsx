@@ -15,12 +15,14 @@ const getGameList = async (type: string, filter: string) => {
       case "section3": {
         return "platforms=";
       }
+      case "section": {
+        return "dates=";
+      }
       default: {
         return "";
       }
     }
   };
-
   const res = await axios({
     url: `https://api.rawg.io/api/games?key=${process.env.API_KEY}&${costam(
       type
