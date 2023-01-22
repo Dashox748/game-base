@@ -18,7 +18,13 @@ function Header() {
                 <Link href="/games/section1?filter=metacritic">
                   <li>Best Rated</li>
                 </Link>
-                <Link href="/games/section1?filter=released">
+                {/*<Link href="/games/section1?filter=released">*/}
+                <Link
+                  href={{
+                    pathname: "/games/section1",
+                    query: { filter: "released" },
+                  }}
+                >
                   <li>Most Recent</li>
                 </Link>
                 <Link href="/games/section1?filter=popular">

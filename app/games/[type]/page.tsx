@@ -6,7 +6,7 @@ import classes from "./page.module.css";
 const getGameList = async (type: string, searchParams: string) => {
   console.log(searchParams);
   const res = await axios({
-    url: `https://api.rawg.io/api/games?key=${process.env.API_KEY}&ordering=-${searchParams}`,
+    url: `https://api.rawg.io/api/games?key=${process.env.API_KEY}&ordering=-${type}`,
     // url: `https://api.rawg.io/api/games?key=${
     //   process.env.API_KEY
     // }&page_size=40${type === "section1" ? `&ordering=-${searchParams}` : ""}${
