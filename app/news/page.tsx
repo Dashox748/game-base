@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import classes from "./page.module.css";
 import HeadingPost from "@/components/posts/HeadingPost";
+import AllPosts from "@/components/posts/AllPosts";
 
 const getPosts = async () => {
   const querySnapshot = await getDocs(collection(db, "articles"));
@@ -20,11 +21,18 @@ const getPosts = async () => {
 async function Page() {
   const posts = await getPosts();
   return (
-    <div>
+    <div className={classes.news_container}>
       <div className={classes.grid_news}>
-        {posts.map((post, index: number) => (
-          <div key={index} style={{ width: "300px", height: "475px" }}>
+        {posts.slice(0, 4).map((post, index: number) => (
+          <div key={index} style={{ width: "100%", height: "475px" }}>
             <HeadingPost post={post} />
+          </div>
+        ))}
+      </div>
+      <div className={classes.flex_news}>
+        {posts.slice(4, -1).map((post, index: number) => (
+          <div key={index} className={classes.news}>
+            <AllPosts post={post} />
           </div>
         ))}
       </div>

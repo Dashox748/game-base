@@ -1,0 +1,22 @@
+.post_container{
+    display: flex;
+    gap: 2rem;
+    margin: 0 1rem;
+}
+.post_container_description{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 10px;
+}
+.post_container_description p{
+    color: lightgray;
+}
+
+.post_title:hover{
+    text-decoration: underline;
+}
+.post_image:hover{
+    opacity: 0.8;
+
+}

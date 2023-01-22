@@ -12,9 +12,6 @@
     min-height: 66px;
     margin: 0;
 }
-/*.post_heading:hover{*/
-/*    transform:scale(1.04)*/
-/*}*/
 
 .post_image{
     object-fit: cover;

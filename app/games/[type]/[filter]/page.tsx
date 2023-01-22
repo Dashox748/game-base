@@ -2,6 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import notFoundPhoto from "@/temporaryPhotos/notFoundPhoto.png";
 import classes from "./page.module.css";
+import Link from "next/link";
 
 const getGameList = async (type: string, filter: string) => {
   const costam = (whichType: string) => {
@@ -36,6 +37,7 @@ const getGameList = async (type: string, filter: string) => {
     .catch((err) => {
       console.error(err);
     });
+  console.log(res);
   return await res;
 };
 
@@ -52,21 +54,25 @@ export default async function GameListWithTypes({
       <div className={classes.gameList_grid}>
         {gameList?.results?.map((item: any, index: number) => {
           return (
-            <div key={index} className={classes.game_grid}>
-              <Image
-                src={
-                  item.background_image ? item.background_image : notFoundPhoto
-                }
-                alt={`${item.name} thumb`}
-                placeholder="blur"
-                blurDataURL={"/blur.jpg"}
-                fill
-                sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 33vw"
-              />
-              <div className={classes.gameTitle_grid}>
-                <h2>{item.name}</h2>
+            <Link href={`game/${item.id}`} key={index}>
+              <div className={classes.game_grid}>
+                <Image
+                  src={
+                    item.background_image
+                      ? item.background_image
+                      : notFoundPhoto
+                  }
+                  alt={`${item.name} thumb`}
+                  placeholder="blur"
+                  blurDataURL={"/blur.jpg"}
+                  fill
+                  sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 33vw"
+                />
+                <div className={classes.gameTitle_grid}>
+                  <h2>{item.name}</h2>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

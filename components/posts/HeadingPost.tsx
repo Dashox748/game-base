@@ -13,7 +13,7 @@ const HeadingPost = ({ post }: any) => {
         overflow: "hidden",
       }}
     >
-      <Link href="/news/12">
+      <Link href={`/news/${post.id}`}>
         <Image
           src={post.data.bannerImage}
           fill

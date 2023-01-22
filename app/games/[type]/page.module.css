@@ -16,9 +16,6 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-.game_grid:hover{
-    transform: scale(1.1);
-}
 
 .gameTitle_grid{
     display: flex;
