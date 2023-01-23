@@ -1,11 +1,16 @@
 import axios from "axios";
 import classes from "./page.module.css";
+import { caches } from "next/dist/compiled/@edge-runtime/primitives/cache";
 
 const getGameInfo = async (gameId: string) => {
   return await axios({
     url: `https://api.rawg.io/api/games/${gameId}?key=${process.env.API_KEY}`,
     method: "GET",
-    headers: {},
+    headers: {
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
+      Expires: "0",
+    },
   })
     .then((response) => {
       return response.data;
