@@ -10,6 +10,7 @@ const getGameInfo = async (gameId: string) => {
       "Cache-Control": "no-cache",
       Pragma: "no-cache",
       Expires: "0",
+      cache: "no-store",
     },
   })
     .then((response) => {
