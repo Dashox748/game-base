@@ -6,6 +6,8 @@ import classes from "./page.module.css";
 import HeadingPost from "@/components/posts/HeadingPost";
 import AllPosts from "@/components/posts/AllPosts";
 
+export const revalidate = 0;
+
 const getPosts = async () => {
   const querySnapshot = await getDocs(collection(db, "articles"));
   return querySnapshot.docs.map((doc) => {
@@ -18,7 +20,7 @@ const getPosts = async () => {
   });
 };
 
-async function Page() {
+export default async function NewsList() {
   const posts = await getPosts();
   return (
     <div className={classes.news_container}>
@@ -39,5 +41,3 @@ async function Page() {
     </div>
   );
 }
-
-export default Page;
