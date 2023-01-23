@@ -16,7 +16,7 @@ const addPostToFirebase = async () => {
 };
 
 function Page() {
-  addPostToFirebase();
+  // addPostToFirebase();
   return <div></div>;
 }
 
