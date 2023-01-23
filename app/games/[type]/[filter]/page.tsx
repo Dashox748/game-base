@@ -37,7 +37,6 @@ const getGameList = async (type: string, filter: string) => {
     .catch((err) => {
       console.error(err);
     });
-  console.log(res);
   return await res;
 };
 

@@ -3,7 +3,6 @@ import classes from "./headingPost.module.css";
 import Link from "next/link";
 
 const HeadingPost = ({ post }: any) => {
-  console.log(post);
   return (
     <div
       style={{

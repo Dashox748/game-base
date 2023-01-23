@@ -32,7 +32,7 @@ export default async function NewsList() {
         ))}
       </div>
       <div className={classes.flex_news}>
-        {posts.slice(4, -1).map((post, index: number) => (
+        {posts.slice(4).map((post, index: number) => (
           <div key={index} className={classes.news}>
             <AllPosts post={post} />
           </div>

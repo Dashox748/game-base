@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["media.rawg.io", "localhost", "sm.ign.com", "ign.com"], // <== Domain name
+    domains: ["media.rawg.io", "localhost", "sm.ign.com", "ign.com","vitals.vercel-insights.com"], // <== Domain name
   },
 };
 module.exports = nextConfig;
