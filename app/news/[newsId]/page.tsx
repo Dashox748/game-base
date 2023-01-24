@@ -24,17 +24,14 @@ type PageProps = {
 
 async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
   const news = await getNewsFromId(newsId);
-  // console.log(news);
-  console.log(
-    news?.data.body.split("\\n").map((item: any) => console.log(item))
-  );
+
   return (
     <div className={classes.advancedInfo_news_container}>
       <div className={classes.advancedInfo_news_title}>
         <h1>{news?.data.title}</h1>
         <p>{news?.data.brief}</p>
       </div>
-      <div className={classes.temporary}>
+      <div className={classes.advancedInfo_news_image_and_info}>
         <div className={classes.advancedInfo_news_image_container}>
           <Image
             src={news?.data.bannerImage}
@@ -54,17 +51,7 @@ async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
           <h3 style={{ color: "gray" }}>Published: 12 jannuary 2023</h3>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "3rem",
-          textAlign: "center",
-          fontSize: "20px",
-          color: "lightgray",
-          padding: "0 10rem",
-        }}
-      >
+      <div className={classes.advancedInfo_news_text}>
         {news?.data.body.split("\\n").map((item: any, index: number) => {
           return <p key={index}>{item}</p>;
         })}
@@ -72,4 +59,5 @@ async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
     </div>
   );
 }
+
 export default NewsAdvancedInfo;

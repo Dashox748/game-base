@@ -1,7 +1,5 @@
 import { collection, getDocs } from "@firebase/firestore";
 import { db } from "@/firebase";
-import Image from "next/image";
-import Link from "next/link";
 import classes from "./page.module.css";
 import HeadingPost from "@/components/posts/HeadingPost";
 import AllPosts from "@/components/posts/AllPosts";

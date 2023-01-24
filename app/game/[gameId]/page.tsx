@@ -1,6 +1,5 @@
 import axios from "axios";
 import classes from "./page.module.css";
-import { caches } from "next/dist/compiled/@edge-runtime/primitives/cache";
 
 const getGameInfo = async (gameId: string) => {
   return await axios({
@@ -30,16 +29,18 @@ type PageProps = {
 export default async function Page({ params: { gameId } }: PageProps) {
   const gameInfo = await getGameInfo(gameId);
   return (
-    <div
-      style={{
-        color: "white",
-      }}
-    >
-      <h1 style={{ fontSize: "45px" }}>{gameInfo?.name}</h1>
+    <div className={classes.advancedGameInfo_container}>
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <h1 style={{ fontSize: "45px" }}>{gameInfo?.name}</h1>
+        <h1 className={classes.metacritic_rating}>95</h1>
+      </div>
       <h1 style={{ margin: "3rem 0 1rem 0" }}>About</h1>
-      <p style={{ fontSize: "20px", maxWidth: "600px" }}>
-        {gameInfo?.description_raw}
-      </p>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <p className={classes.advancedGameInfo_gameDescription}>
+          {gameInfo?.description_raw}
+        </p>
+        <input type="checkbox" className={classes.expandButton} />
+      </div>
       <div
         className={classes.background_image}
         style={{
