@@ -1,0 +1,52 @@
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+
+}
+
+.form_container input[type=text],
+.form_container input[type=password] {
+    margin-top: 7px;
+    border: none;
+    outline: none;
+    padding: 16px;
+    border-radius: 6px;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.form_container input[type=checkbox] {
+    cursor: pointer;
+}
+
+.form_container input[type=submit] {
+    background: rgb(0, 82, 255);
+    border: 0;
+    outline: 0;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form_container input[type=submit]:active {
+    opacity: 0.9;
+}
+
+
+.error_message {
+    color: rgb(220, 53, 69);
+    font-size: 16px;
+}
+
+.labels {
+    font-size: 16px;
+    color: white;
+}

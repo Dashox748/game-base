@@ -1,8 +1,8 @@
-import Image from "next/image";
 import classes from "./headingPost.module.css";
+import Image from "next/image";
 import Link from "next/link";
 
-const HeadingPost = ({ post }: any) => {
+function HeadingPost({ post }: any) {
   return (
     <div
       style={{
@@ -24,5 +24,5 @@ const HeadingPost = ({ post }: any) => {
       </Link>
     </div>
   );
-};
+}
 export default HeadingPost;

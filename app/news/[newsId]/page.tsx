@@ -1,6 +1,6 @@
+import classes from "./page.module.css";
 import { collection, getDocs } from "@firebase/firestore";
 import { db } from "@/firebase";
-import classes from "./page.module.css";
 import Image from "next/image";
 
 const getNewsFromId = async (newsId: string) => {
@@ -27,7 +27,7 @@ async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
 
   return (
     <div className={classes.advancedInfo_news_container}>
-      <div className={classes.advancedInfo_news_title}>
+      <div className={classes.advancedInfo_news_heading}>
         <h1>{news?.data.title}</h1>
         <p>{news?.data.brief}</p>
       </div>
@@ -40,15 +40,16 @@ async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
             quality={100}
           />
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "6px",
-          }}
-        >
-          <h3 style={{ color: "gray" }}>By: Dashox</h3>
-          <h3 style={{ color: "gray" }}>Published: 12 jannuary 2023</h3>
+        <div className={classes.advancedInfo_news_published}>
+          <h3>By: {news?.data.author}</h3>
+          <h3>
+            Published:{" "}
+            {new Intl.DateTimeFormat("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }).format(news?.data.postedOn.seconds * 1000)}
+          </h3>
         </div>
       </div>
       <div className={classes.advancedInfo_news_text}>
