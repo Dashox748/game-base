@@ -1,7 +1,10 @@
+// `use client`
 import classes from "./page.module.css";
 import { collection, getDocs } from "@firebase/firestore";
 import { db } from "@/firebase";
 import Image from "next/image";
+
+export const revalidate = 0;
 
 const getNewsFromId = async (newsId: string) => {
   const querySnapshot = await getDocs(collection(db, "articles"));
@@ -48,7 +51,7 @@ async function NewsAdvancedInfo({ params: { newsId } }: PageProps) {
               year: "numeric",
               month: "long",
               day: "numeric",
-            }).format(news?.data.postedOn.seconds * 1000)}
+            }).format((news?.data.postedOn.seconds*1000))}
           </h3>
         </div>
       </div>

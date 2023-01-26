@@ -83,7 +83,7 @@ export default function App() {
           type="checkbox"
           value="No"
         />
-        <p>Accept terms of </p>
+        <p>Agree to Terms and Conditions </p>
       </div>
       <input type="submit" value="Register" />
     </form>

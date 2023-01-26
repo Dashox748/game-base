@@ -8,7 +8,6 @@
 
 .header__menu {
     position: relative;
-
 }
 
 .header__title {
@@ -96,7 +95,6 @@
 
 .header__navbar {
     display: flex;
-    gap: 2rem;
     align-items: center;
 }
 
@@ -108,6 +106,7 @@
 .header__searchbar {
     display: flex;
     gap: 1rem;
+    align-items: center;
 
 }
 
@@ -132,5 +131,17 @@
 
 .header__searchbar button:active {
     scale: 1.05;
+}
+.header__searchbar a{
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 3px;
+    white-space: nowrap;
+    transition: .2s ease-in-out;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+}
+.header__searchbar a:hover{
+    border-color: white;
 }
 

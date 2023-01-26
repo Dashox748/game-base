@@ -18,6 +18,7 @@ const addPostToFirebase = async () => {
 
 function Page() {
   // addPostToFirebase();
+  console.log("dodalem")
   return <div></div>;
 }
 
