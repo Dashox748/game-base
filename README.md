@@ -12,7 +12,6 @@ https://game-base-omega.vercel.app/
 - TypeScript
 - CSS
 - Next.js 13
-- Material ui
 - Firebase auth
 - API
 - Local storage
