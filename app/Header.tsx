@@ -105,8 +105,8 @@ function Header() {
       <div className={classes.header__searchbar}>
         <input placeholder="Search" />
         <button style={{ height: "35px" }}>Search</button>
-        <Link href={"/login"}>LOG IN</Link>
-        <Link href={"register"}>SIGN IN</Link>
+        <Link href={"/signin"}>LOG IN</Link>
+        <Link href={"signup"}>SIGN UP</Link>
         {/*<h4 style={{ width: "90px", cursor: "pointer" }}></h4>*/}
         {/*<h4 style={{ width: "90px", cursor: "pointer" }}>Sign In</h4>*/}
       </div>
