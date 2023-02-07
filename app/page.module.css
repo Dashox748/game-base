@@ -4,6 +4,7 @@
     margin: 0 auto 50px auto;
     background: #222222;
     padding: 0 clamp(10px, 3.5vw, 150px);
+
 }
 
 .header__menu {
@@ -132,7 +133,8 @@
 .header__searchbar button:active {
     scale: 1.05;
 }
-.header__searchbar a{
+
+.header__searchbar a {
     font-weight: 500;
     font-size: 15px;
     margin-top: 3px;
@@ -141,7 +143,53 @@
     border-bottom: 2px solid transparent;
     padding-bottom: 3px;
 }
-.header__searchbar a:hover{
+
+.header__searchbar a:hover {
     border-color: white;
+}
+
+.banner__image_holder {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: clamp(100px, 20vw, 350px);
+
+}
+
+.banner__image_title {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__image_title span {
+    font-size: clamp(20px, 10vw, 40px);
+    font-weight: 500;
+    color: white;
+}
+
+.check_button {
+    margin-top: 1rem;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 14px;
+    max-width: 200px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: scale ease-in-out 0.3s;
+}
+
+.check_button:hover {
+    scale: 1.04;
+}
+
+.check_button:active {
+    opacity: .9;
 }
 
