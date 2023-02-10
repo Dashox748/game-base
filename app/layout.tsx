@@ -3,7 +3,6 @@ import { AnalyticsWrapper } from "@/components/analytics";
 import Header from "@/app/Header";
 import { Roboto } from "@next/font/google";
 import classes from "./page.module.css";
-// import { MediumProvider } from "@/context/MediumContext";
 
 const roboto = Roboto({
   subsets: ["latin"],
